@@ -23,7 +23,7 @@ int main() {
     for(int i = 0; i < n; i++) {
         int h, w, num;
         tie(h, w, num) = persons[i];
-        printf("%d %d %d\n", h, w, num);
+        printf("%d %d %d\n", -h, w, num);
     }
      
     return 0;
