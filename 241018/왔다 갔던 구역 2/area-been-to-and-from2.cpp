@@ -12,7 +12,7 @@ int main() {
         int x;
         char cmd;
         cin >> x >> cmd;
-
+        
         if(cmd == 'R') {
             for(int j = cur; j < cur + x; j++) {
                 arr[j]++;
@@ -21,7 +21,7 @@ int main() {
         }
         else {
             for(int j = cur; j > cur - x; j--) {
-                arr[j]++;
+                arr[j - 1]++;
             }
             cur -= x;
         }
@@ -29,7 +29,7 @@ int main() {
     }
 
     int cnt = 0;
-    for(int i = 1; i < MAX; i++) {
+    for(int i = 0; i < MAX; i++) {
         if(arr[i] >= 2) cnt++;
     }
 
