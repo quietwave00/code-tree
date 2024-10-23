@@ -33,28 +33,25 @@ int main() {
         }
     }
 
-    // 잔해물 좌표
-    vector<pair<int, int>> vec; 
-    for(int i = 0; i < MAX; i++) {
-        for(int j = 0; j < MAX; j++) {
-            if(arr[i][j] > 0) {
-                vec.push_back(make_pair(i, j));
+    bool flag = false;
+    int max_x = 0, max_y = 0, min_x = MAX, min_y = MAX;
+    for(int x = 0; x < MAX; x++) {
+        for(int y = 0; y < MAX; y++) {
+            if(arr[x][y]) {
+                flag = true;
+                min_x = min(min_x, x);
+                max_x = max(max_x, x);
+                min_y = min(min_y, y);
+                max_y = max(max_y, y);
             }
         }
     }
 
-    if (!vec.empty()) {
-        sort(vec.begin(), vec.end());
+    int area = 0;
+    if(!flag) area = 0;
+    else area = (max_x - min_x + 1) * (max_y - min_y + 1);
 
-        int x1 = vec.front().first;
-        int y1 = vec.front().second;
-        int x2 = vec.back().first + 1;
-        int y2 = vec.back().second + 1;
-
-        cout << (x2 - x1) * (y2 - y1);
-    } else {
-        cout << 0;
-    }
+    cout << area;
 
     return 0;
 }
