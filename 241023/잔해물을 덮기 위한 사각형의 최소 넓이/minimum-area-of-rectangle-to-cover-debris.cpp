@@ -43,14 +43,18 @@ int main() {
         }
     }
 
-    sort(vec.begin(), vec.end());
+    if (!vec.empty()) {
+        sort(vec.begin(), vec.end());
 
-    int x1 = vec.front().first;
-    int y1 = vec.front().second;
-    int x2 = vec.back().first + 1;
-    int y2 = vec.back().second + 1;
+        int x1 = vec.front().first;
+        int y1 = vec.front().second;
+        int x2 = vec.back().first + 1;
+        int y2 = vec.back().second + 1;
 
-    cout << (x2 - x1) * (y2 - y1);
+        cout << (x2 - x1) * (y2 - y1);
+    } else {
+        cout << 0;
+    }
 
     return 0;
 }
