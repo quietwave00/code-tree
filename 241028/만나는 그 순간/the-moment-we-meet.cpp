@@ -13,6 +13,7 @@ int main() {
     int cur_a = OFFSET, cur_b = OFFSET;
     int current_time = 1; 
 
+    // A
     for (int i = 0; i < n; i++) {
         char cmd;
         int t;
@@ -30,7 +31,7 @@ int main() {
 
     current_time = 1;
 
-    // B의 이동 기록
+    // B
     for (int i = 0; i < m; i++) {
         char cmd;
         int t;
@@ -46,11 +47,17 @@ int main() {
         }
     }
 
+    bool flag = false;
     for (int i = 0; i < MAX; i++) {
         if (time_a[i] != 0 && time_b[i] != 0 && time_a[i] == time_b[i]) {
-            cout << time_a[i]; 
+            cout << time_a[i];
+            flag = true; 
             break;
         }
+    }
+
+    if(!flag) {
+        cout << -1;
     }
 
     return 0;
