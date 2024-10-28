@@ -14,6 +14,7 @@ int main() {
 
         if(arr[num] == k) {
             answer = num;
+            break;
         }
     }
 
