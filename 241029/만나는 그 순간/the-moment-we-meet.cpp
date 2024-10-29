@@ -41,7 +41,7 @@ int main() {
 
     // 같은 위치
     int answer = -1;
-    for(int i = 1; i <= MAX; i++) {
+    for(int i = 1; i < cur_a; i++) {
         if(pos_a[i] == pos_b[i]) {
             answer = i;
             break;
