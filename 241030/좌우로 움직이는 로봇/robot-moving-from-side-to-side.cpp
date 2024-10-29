@@ -37,16 +37,27 @@ int main() {
         }
     }
 
-    // 같은 위치 체크
-    int answer = 0;
-    int size = max(time_a, time_b);
-    for(int i = 1; i <= size; i++) {
-        if(pos_a[i] == pos_b[i] && pos_a[i - 1] != pos_b[i - 1]) {
-            answer++;
-        }
+    // 위치 보정
+	if(time_a < time_b) {
+		for(int i = time_a; i < time_b; i++) {
+			pos_a[i] = pos_a[i - 1];
+		}
+	}
+	else if(time_a > time_b) {
+		for(int i = time_b; i < time_a; i++) {
+			pos_b[i] = pos_b[i - 1];
+		}
+	}
+
+    // 일치하는 횟수
+    int cnt = 0;
+	int size = max(time_a, time_b);
+    for(int i = 1; i < size; i++) {
+        if(pos_a[i] == pos_b[i] && pos_a[i - 1] != pos_b[i - 1])
+            cnt++;
     }
 
-    cout << answer << endl;
+    cout << cnt << endl;
 
     return 0;
 }
