@@ -6,6 +6,7 @@ using namespace std;
 
 int dx[4] = {0, 1, 0, -1};
 int dy[4] = {1, 0, -1, 0};
+int arr[100][100];
 int n, m;
 
 bool InRange(int x, int y) {
