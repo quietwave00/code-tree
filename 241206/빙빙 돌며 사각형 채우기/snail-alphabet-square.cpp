@@ -31,10 +31,11 @@ int main() {
                 cx = nx;
                 cy = ny;
                 ch++;
+                if (ch > 'Z') ch = 'A';
                 arr[cx][cy] = ch;
                 break;
             } else {
-                dir = (dir + 3) % 4;
+                dir = (dir + 1) % 4;
             }
         }
     }
