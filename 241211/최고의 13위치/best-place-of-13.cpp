@@ -13,16 +13,22 @@ int main() {
         }
     }
 
-    int count = 0;
     int max_count = 0;
-    for(int i = 0; i < n - 2; i++) {
-        for(int j = i; j < i + 3; j++) {
-            if(arr[i][j] == 1) count++;
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n - 2; j++) {
+            int count = 0;
+            for(int k = j; k < j + 3; k++) {
+                // printf("arr[%d][%d]: %d\n", i, k, arr[i][k]);
+                if(arr[i][k] == 1) count++;
+            }
+            max_count = max(max_count, count);
         }
-        max_count = (max_count, count);
     }
 
     cout << max_count;
 
     return 0;
 }
+
+
+
