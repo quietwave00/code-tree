@@ -13,7 +13,7 @@ int main() {
     }
 
     int max_sum = 0;
-    for(int i = 0; i < N - K; i++) {
+    for(int i = 0; i <= N - K; i++) {
         int sum = 0;
         for(int j = i; j < i + K; j++) {
             sum += arr[j];
