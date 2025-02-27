@@ -19,13 +19,16 @@ int main() {
     }
 
     int max_num = 0;
-    for(int i = 1; i <= 10001; i++) {
+    for(int i = 1; i <= 10000; i++) {
         int sum = 0;
-        for(int j = 1; j <= K + 1; j++) {
+        for(int j = i; j <= i + K; j++) {
+            if(j >= 10000) continue;
             if(arr[j].first == true) {
                 sum += arr[j].second;
+                // cout << "arr[j].second: " << arr[j].second << endl;
             } 
         }
+        // cout << "sum: " << sum << endl;
         max_num = max(sum, max_num);
     }
 
