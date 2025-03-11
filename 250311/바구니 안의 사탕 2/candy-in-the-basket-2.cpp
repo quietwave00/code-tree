@@ -23,13 +23,9 @@ int main() {
     int max_num = 0;
     for(int i = 0; i <= 100; i++) {
         int sum = 0;
-        if(Includes(i - K) && Includes(i + K)) {
-            // cout << "i - K:" << i - K << ", i + K: " << i + K << endl;
             for(int j = i - K; j <= i + K; j++) {
-                // cout << j << ": " << m[j] << endl;
                 sum += m[j];
-            }
-        max_num = max(sum, max_num);
+                max_num = max(sum, max_num);
         }
     }
 
