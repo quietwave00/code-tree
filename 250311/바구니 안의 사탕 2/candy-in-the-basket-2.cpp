@@ -17,7 +17,7 @@ int main() {
     for(int i = 0; i < N; i++) {
         int num1 = 0, num2 = 0;
         cin >> num1 >> num2;
-        m.insert({num2, num1});
+        m[num2] += num1;
     }
 
     int max_num = 0;
