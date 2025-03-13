@@ -19,20 +19,23 @@ int main()
     int min_num = INT_MAX;
     for (int s = 0; s < 99 - (T - 1); s++)
     {
-        for (int e = s + 2; e < 99; e++)
+        for (int e = s + (T - 1); e < 99; e++)
         {
-            if (arr[s] == 0 || arr[e] == 0)
-                continue;
+            if (arr[s] == 0 || arr[e] == 0) continue;
+            // printf("start: %d, end: %d\n", s, e);
 
             int sum_h = 0;
             for (int i = s; i <= e; i++)
             {
                 sum_h += abs(H - arr[i]);
+                // cout << "abs(H - arr[i]): " << abs(H - arr[i]) << endl;
             }
-            if(sum_h > 0) {
+            if (sum_h > 0)
+            {
                 min_num = min(sum_h, min_num);
             }
         }
+        // cout << "=========" << endl;
     }
 
     cout << min_num << endl;
