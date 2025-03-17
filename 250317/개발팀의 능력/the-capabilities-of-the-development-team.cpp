@@ -45,7 +45,8 @@ int main()
         }
     }
 
-    cout << min_diff << endl;
+    if(min_diff == INT_MAX) cout << -1 << endl;
+    else cout << min_diff << endl;
 
     return 0;
 }
