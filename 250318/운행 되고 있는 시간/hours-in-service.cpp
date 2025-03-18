@@ -1,6 +1,5 @@
 #include <iostream>
 #include <algorithm>
-#include <climits>
 
 using namespace std;
 
@@ -15,27 +14,26 @@ int main()
     }
 
     // 해고
-    int min_cnt = INT_MAX;
+    int max_cnt = 0;
     for(int i = 0; i < N; i++) {
         int counting[1000] = {};
         for(int j = 0; j < N; j++) {
             if(j == i) continue;
 
             int x1 = arr[j][0], x2 = arr[j][1];
-            for(int k = x1; k <= x2; k++) counting[k]++;
+            for(int k = x1; k < x2; k++) counting[k]++;
         }
 
         int cnt = 0;
         for(int j = 0; j < 1000; j++) {
             if(counting[j] > 0) cnt++;
         }
-        min_cnt = min(cnt, min_cnt);
-        
-    }
+        max_cnt = max(cnt, max_cnt);
+        }
 
-    cout << min_cnt << endl;
+        cout << max_cnt << endl;
 
-    return 0;
+        return 0;
 }
 
 // N명 -> 한명 해고
