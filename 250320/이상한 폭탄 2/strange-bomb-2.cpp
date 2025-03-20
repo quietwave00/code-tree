@@ -13,7 +13,7 @@ int main()
         cin >> arr[i];
     }
 
-    int max_num = 0;
+    int max_num = -1;
     for (int target = 0; target < N - 2; target++) {
         int check[1000] = { 0 };
         for (int i = target; i <= target + K; i++) {
