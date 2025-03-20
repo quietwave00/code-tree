@@ -14,13 +14,12 @@ int main()
     }
 
     int max_num = -1;
-    for (int target = 0; target < N - 2; target++) {
+    for (int target = 0; target < N - (K - 1); target++) {
         int check[1000] = { 0 };
         for (int i = target; i <= target + K; i++) {
             check[arr[i]]++;
         }
         for (int i = 0; i < 1000; i++) {
-            // printf("check[%d]: %d\n", i, check[i]);
             if(check[i] >= 2) max_num = max(i, max_num);
         }
     }
