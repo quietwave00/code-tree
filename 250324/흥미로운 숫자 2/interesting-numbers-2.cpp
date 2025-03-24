@@ -1,18 +1,21 @@
 #include <iostream>
-#include <set>
+#include <map>
 
 using namespace std;
 
 int X, Y;
 
 bool IsInterestedNumber(int num) {
-    set<int> s;
+    map<int, int> m;
     while(num > 0) {
         int digit = num % 10;
-        s.insert(digit);
+        m[digit]++;
         num /= 10;
     }
-    if(s.size() == 2) return true;
+    if(m.size() != 2) return false;
+    for(int i = 0; i < m.size(); i++) {
+        if(m[i] == 1) return true;
+    }
     return false;
 }
 
@@ -31,4 +34,4 @@ int main() {
 
 // X <= num <= Y
 // a a b a ... 
-// 각 자리수 분해 후 set쓰면 되남 사이즈 2일 때만 return true
+// 각 자리수 분해 후 map에 빈도수 체크
