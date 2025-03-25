@@ -23,6 +23,7 @@ int main() {
             if(cups[n3] == 1) score++;
         }
         max_score = max(score, max_score);  
+        cups[i] = 0;
     }
 
     cout << max_score << endl;
