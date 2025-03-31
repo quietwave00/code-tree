@@ -6,13 +6,13 @@
 using namespace std;
 
 // 상우, 상좌, 하우, 하좌
-pair<int, int> dir[4] = {{1, -1}, {1, 1}, {-1, -1}, {-1, 1}};
+pair<int, int> dir[4] = {{1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
 
 int N, M;
 int arr[MAX][MAX];
 
 bool InRange(int x, int y) {
-    return x >= 0 && x < M && y >= 0 && y < N;
+    return x >= 0 && x < N && y >= 0 && y < M;
 }
 
 int main() {
