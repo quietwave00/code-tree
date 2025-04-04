@@ -37,7 +37,7 @@ int main() {
         }
     }
 
-    cout << max_size << endl;
+    max_size == 0 ? cout << -1 << endl : cout << max_size << endl;
 
     return 0;
 }
