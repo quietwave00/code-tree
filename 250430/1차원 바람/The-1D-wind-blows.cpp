@@ -51,14 +51,16 @@ int main() {
             cin >> arr[i][j];
         }
     }
-    cin >> r >> d;
-    if(d == 'L') dir = 0;
-    else dir = 1;
 
-    int start_r = r;
-    int start_dir = dir;
     // Q번 진행
     while(Q--) {
+        cin >> r >> d;
+        if(d == 'L') dir = 0;
+        else dir = 1;
+
+        int start_r = r;
+        int start_dir = dir;
+
         // 최초 바람
         if(!start_dir) {
             doLeft(start_r);
@@ -109,7 +111,3 @@ int main() {
     return 0;
 }
 
-// N * M, Q번
-// 위 아래로... 이때 같은 숫자 있는지 체크 -> true면 반대 방향으로 밀림 while.
-// 전파될 때마다 반대 방향
-// r = 전파시작 행, d = 방향(L, R)
