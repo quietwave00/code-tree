@@ -17,7 +17,7 @@ int main() {
 
     bool overlap = false;
     for(int i = 1; i <= 100; i++) {
-        if(arr[i] == 3) overlap = true;
+        if(arr[i] == N) overlap = true;
     }
 
     if(overlap) cout << "Yes";
