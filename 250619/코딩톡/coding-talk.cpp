@@ -32,10 +32,13 @@ int main()
                 people[c[i] - 'A'] = 0; // 가능성X
             }
 
-            if (u[p - 1] == u[p])
-            {
-                people[c[p - 1] - 'A'] = 0;
+            for(int j = i; j > 1; j--) {
+                if (u[j] == u[j - 1])
+                {
+                    people[c[j - 1] - 'A'] = 0;
+                } else break;
             }
+            
         }
 
         vector<char> unread;
