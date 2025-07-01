@@ -7,19 +7,15 @@ using namespace std;
 int N;
 string str;
 
-bool Check(string target) {
-    int length = target.length();
-
-    int cnt = 1;
-    for(int i = length; i < N; i++) {
-        string comp;
-        for(int j = 0; j < length; j++) {
-            comp += str[i + j];
+bool isDuplicated(int length) {
+    for(int i = 0; i < N - length; i++) {
+        string target = str.substr(i, length);
+        for(int j = i + 1; j < N; j++) {
+            string comp = str.substr(j, length);
+            // printf("target: %s, comp: %s\n", target.c_str(), comp.c_str());
+            if(target == comp) return true;
         }
-        // cout << "target: " << target << ", comp: " << comp << endl;
-        if(target == comp) cnt++;
     }
-    if(cnt >= 2) return true;
     return false;
 }
 
@@ -30,12 +26,7 @@ int main() {
     int min_length = INT_MAX;
     // 길이별
     for(int length = 1; length <= N; length++) {
-        string target;
-        for(int i = 0; i < length; i++) {
-            target += str[i];
-        }
-        // cout <<"****target: " << target << endl;
-        if(!Check(target)) min_length = min(length, min_length);
+        if(!isDuplicated(length)) min_length = min(length, min_length);
     }
 
     cout << min_length << endl;
@@ -45,4 +36,3 @@ int main() {
 
 // 길이별 문자열
 // 2번 이상 나타나면 false 처리
-// A B C D A B C
