@@ -19,7 +19,7 @@ bool IsOverlap() {
 
 void Choose(int cur) {
     if(!comp.empty()) {
-        if(!IsOverlap()) {
+        if(!IsOverlap()) { 
             answer = max((int)comp.size(), answer);
         }
     }
@@ -27,11 +27,12 @@ void Choose(int cur) {
         return;
     }
 
-    for(int i = 0; i < N; i++) {
-        comp.push_back(i);
-        Choose(cur + 1);
-        comp.pop_back();
-    }
+    comp.push_back(cur);
+    Choose(cur + 1);
+    comp.pop_back();
+
+    Choose(cur + 1);
+
     return;
 }
 
