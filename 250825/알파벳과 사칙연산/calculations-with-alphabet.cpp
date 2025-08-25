@@ -1,10 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <climits>
 using namespace std;
 
 string str;
-int max_num;
+int max_num = INT_MIN;
 vector<int> comp;
 
 int GetResult() {
