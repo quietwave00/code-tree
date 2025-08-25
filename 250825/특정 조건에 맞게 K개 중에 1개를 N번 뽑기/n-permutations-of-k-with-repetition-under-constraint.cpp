@@ -8,15 +8,18 @@ vector<int> comp;
 vector<vector<int>> all_comp; // comp쌍 담음
 
 bool IsDuplicated() {
-    bool isDupliacted = true;
-    if(N == 1) return false;
-    for(int i = 1; i < N; i++) {
-        if(comp[i] != comp[i - 1]) {
-            isDupliacted = false;
-            break;
+    if (N < 3) return false;
+    
+    int count = 1;
+    for (int i = 1; i < N; i++) {
+        if (comp[i] == comp[i - 1]) {
+            count++;
+            if (count >= 3) return true;
+        } else {
+            count = 1;
         }
     }
-    return isDupliacted;
+    return false;
 }
 
 void MakeSequence() {
