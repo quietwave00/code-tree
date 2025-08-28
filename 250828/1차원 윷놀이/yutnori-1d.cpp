@@ -14,11 +14,11 @@ int GetScore() {
     //     cout << comp[i] << " ";
     // }
     // cout << endl;
-    board.assign(K + 1, 0);
+    board.assign(K + 1, 1);
 
     int score = 0;
     for(int i = 0; i < N; i++) {
-        if(board[comp[i]] == M) continue;
+        if(board[comp[i]] >= M) continue;
         board[comp[i]] += nums[i];
         if(board[comp[i]] >= M) {
             score++;
@@ -67,5 +67,5 @@ N번의 턴
 1. 말 선택: 1~K까지 중복하여 N개 선택
 2. 말 이동: 선택된 말은 N번에 걸쳐
 if(pos != M) pos+=nums[N]
-if(pos >= M) score++;
+if(pos == M) score++;
 */
